@@ -6,12 +6,12 @@ from __future__ import absolute_import, unicode_literals
 
 from django.db import models
 
-from wagtail.wagtailcore.models import Page
-from wagtail.wagtailcore.fields import StreamField
-from wagtail.wagtailadmin.edit_handlers import StreamFieldPanel
-from wagtail.wagtailsearch import index
-from wagtail.wagtailsnippets.edit_handlers import SnippetChooserPanel
-from wagtail.wagtailcore import blocks
+from wagtail.core.models import Page
+from wagtail.core.fields import StreamField
+from wagtail.admin.edit_handlers import StreamFieldPanel
+from wagtail.search import index
+from wagtail.snippets.edit_handlers import SnippetChooserPanel
+from wagtail.core import blocks
 
 from common import blocks as common_blocks
 from common.snippets import EmbedCodeSnippet

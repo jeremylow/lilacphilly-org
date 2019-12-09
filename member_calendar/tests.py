@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup as bs
 from django.test import TestCase
 from django.test import Client
 
-from wagtail.wagtailcore.models import Page
+from wagtail.core.models import Page
 
 from member_calendar.models import MemberCalendarEvent
 from member_calendar.utils import make_calendar

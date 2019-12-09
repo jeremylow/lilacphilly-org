@@ -11,15 +11,15 @@ from django.utils.text import slugify
 from icalendar import Event, Calendar
 from dateutil import relativedelta
 
-from wagtail.contrib.wagtailroutablepage.models import RoutablePageMixin, route
-from wagtail.wagtailcore import blocks
-from wagtail.wagtailcore.models import Page
-from wagtail.wagtailcore.fields import RichTextField, StreamField
-from wagtail.wagtailadmin.edit_handlers import (
+from wagtail.contrib.routable_page.models import RoutablePageMixin, route
+from wagtail.core import blocks
+from wagtail.core.models import Page
+from wagtail.core.fields import RichTextField, StreamField
+from wagtail.admin.edit_handlers import (
     FieldPanel,
     StreamFieldPanel,
     MultiFieldPanel)
-from wagtail.wagtailsearch import index
+from wagtail.search import index
 
 from member_calendar.utils import make_calendar
 from common import blocks as common_blocks

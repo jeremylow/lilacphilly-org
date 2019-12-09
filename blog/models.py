@@ -9,13 +9,12 @@ from modelcluster.contrib.taggit import ClusterTaggableManager
 from modelcluster.fields import ParentalKey
 from taggit.models import TaggedItemBase
 
-
-from wagtail.contrib.wagtailroutablepage.models import RoutablePageMixin, route
-from wagtail.wagtailcore import blocks
-from wagtail.wagtailcore.models import Page
-from wagtail.wagtailcore.fields import StreamField
-from wagtail.wagtailadmin.edit_handlers import StreamFieldPanel, FieldPanel, MultiFieldPanel
-from wagtail.wagtailsearch import index
+from wagtail.contrib.routable_page.models import RoutablePageMixin, route
+from wagtail.core import blocks
+from wagtail.core.models import Page
+from wagtail.core.fields import StreamField
+from wagtail.admin.edit_handlers import StreamFieldPanel, FieldPanel, MultiFieldPanel
+from wagtail.search import index
 
 from common import blocks as common_blocks
 from common.open_graph import OpenGraphMixin
