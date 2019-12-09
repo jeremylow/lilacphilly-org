@@ -19,7 +19,7 @@ from common.open_graph import OpenGraphMixin
 
 
 class HomePage(OpenGraphMixin, Page):
-    """Controls rendering of PhillyDSA home page.
+    """Controls rendering of LilacPhilly home page.
 
     This is the first page that you see hosted at /
     """

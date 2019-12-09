@@ -1,13 +1,11 @@
-[![Requirements Status](https://requires.io/github/PhillyDSA/phillydsa-com/requirements.svg?branch=develop)](https://requires.io/github/PhillyDSA/phillydsa-com/requirements/?branch=develop)
-[![CircleCI](https://circleci.com/gh/PhillyDSA/phillydsa-com.svg?style=svg)](https://circleci.com/gh/PhillyDSA/phillydsa-com) [![codecov](https://codecov.io/gh/PhillyDSA/phillydsa-com/branch/develop/graph/badge.svg)](https://codecov.io/gh/PhillyDSA/phillydsa-com)
-# Philly DSA Website
+# Lilac Philly Website
 
-Django site for Philly DSA
+Django site for Lilac Philly
 
 ## Contributing
 
 ####  Code of Conduct
-All contributors agree to abide by the Philly DSA Code of Conduct, which can be found at: [TKTK](github.com/TKTK).
+All contributors agree to abide by the Lilac Philly Code of Conduct, which can be found at: [TKTK](github.com/TKTK).
 
 #### Environment
 

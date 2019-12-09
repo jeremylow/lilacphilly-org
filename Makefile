@@ -25,14 +25,6 @@ env:
 install:
 	pip install -Ur requirements/dev.txt
 
-dev:
-	pyenv install -s 3.6.0
-	# Make will continue here in the event that the virtualenv already exists
-	- pyenv virtualenv 3.6.0 phillydsa
-	pyenv local phillydsa
-	pip install -r requirements/dev.txt
-	pre-commit install
-
 server:
 	python manage.py runserver 0.0.0.0:8000
 
@@ -43,10 +35,10 @@ ci: clean env info test
 	codecov
 
 ans_deploy:
-	ansible-playbook --private-key=.vagrant/machines/default/virtualbox/private_key -u vagrant -i ansible/hosts ansible/ansible-phillydsa-com.yml -vvvv --vault-password-file ~/.vault_pass.txt
+	ansible-playbook --private-key=.vagrant/machines/default/virtualbox/private_key -u vagrant -i ansible/hosts ansible/ansible-lilacphilly-org.yml -vvvv --vault-password-file ~/.vault_pass.txt
 
 deploy:
-	ansible-playbook --private-key=~/.ssh/id_rsa -u jeremy -i ansible/hosts ansible/phillydsa-com.yml -vv --vault-password-file ~/.vault_pass.txt -K
+	ansible-playbook --private-key=~/.ssh/id_rsa -u jeremy -i ansible/hosts ansible/lilacphilly-org.yml -vv --vault-password-file ~/.vault_pass.txt -K
 
 dump:
 	python manage.py dumpdata --natural-foreign --natural-primary > data-`date +'%Y-%m-%d-%H-%M-%S'`.json

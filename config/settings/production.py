@@ -8,7 +8,7 @@ from django.core.exceptions import ImproperlyConfigured
 from .base import *  # noqa
 
 DEBUG = False
-ALLOWED_HOSTS = ['127.0.0.1', 'phillydsa.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'lilacphilly.org']
 
 config = configparser.ConfigParser()
 
@@ -27,7 +27,7 @@ except KeyError:
 INSTALLED_APPS += ['anymail']  # noqa
 ANYMAIL = {
     "MAILGUN_API_KEY": config['mailgun']['api_key'],
-    "MAILGUN_SENDER_DOMAIN": 'mg.phillydsa.com',
+    "MAILGUN_SENDER_DOMAIN": 'mg.lilacphilly.org',
 }
 
 EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
@@ -45,7 +45,7 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': 'phillydsa-django.log',
+            'filename': 'lilacphilly-django.log',
             'maxBytes': 1024 * 1024,
             'backupCount': 5,
             'formatter': 'standard'

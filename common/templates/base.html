@@ -79,9 +79,9 @@
     <meta name="msapplication-square310x310logo" content="{% static 'favicon/mstile-310x310.png' %}">
 
     {% if request.COOKIES.css_cached %}
-        <link rel="stylesheet" type="text/css" href="{% static 'specific/phillydsa-style.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'specific/style.min.css' %}">
     {% else %}
-        <link rel="prefetch" href="{% static 'specific/phillydsa-style.min.css' %}">
+        <link rel="prefetch" href="{% static 'specific/style.min.css' %}">
         <style>
         {% include "common/css.html" %}
         </style>

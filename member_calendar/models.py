@@ -217,13 +217,13 @@ class MemberCalendarEvent(Page):
         event = Event()
 
         event.add('summary', self.title)
-        event.add('uid', '{0}@phillydsa.com'.format(self.slug))
+        event.add('uid', '{0}@lilacphilly.org'.format(self.slug))
         event.add('dtstart', self.event_datetime(self.event_date, self.event_start_time))
         event.add('dtend', self.event_datetime(self.event_date, self.event_end_time))
         event.add('location', ','.join([self.location_street_address,
                                         self.location_city,
                                         self.location_state,
                                         self.location_zip_code]))
-        event.add('organizer', 'PhillyDSA')
+        event.add('organizer', 'Lilac Philly')
         cal.add_component(event)
         return cal.to_ical()
