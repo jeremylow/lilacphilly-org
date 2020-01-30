@@ -45,3 +45,6 @@ dump:
 
 uncss:
 	node uncss.js
+
+black:
+	black .

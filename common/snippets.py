@@ -13,11 +13,7 @@ class EmbedCodeSnippet(models.Model):
     url = models.URLField(null=True, blank=True)
     embed_code = models.TextField()
 
-    panels = [
-        FieldPanel('description'),
-        FieldPanel('url'),
-        FieldPanel('embed_code'),
-    ]
+    panels = [FieldPanel("description"), FieldPanel("url"), FieldPanel("embed_code")]
 
     def __str__(self):
         return self.description

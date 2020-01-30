@@ -14,31 +14,27 @@ class BlockQuote(blocks.StructBlock):
     class Meta:
         """Implement class specific attrs here."""
 
-        icon = 'openquote'
-        template = 'common/_block_quote.html'
+        icon = "openquote"
+        template = "common/_block_quote.html"
 
 
 class CaptionImageBlock(blocks.StructBlock):
     """Create an image with caption and optional alignment."""
 
     photo = ImageChooserBlock()
-    photo_alignment = blocks.ChoiceBlock(choices=(
-        ('left', 'Left'),
-        ('right', 'Right'),
-        ('center', 'Center'))
+    photo_alignment = blocks.ChoiceBlock(
+        choices=(("left", "Left"), ("right", "Right"), ("center", "Center"))
     )
     caption = blocks.CharBlock(max_length=255)
-    caption_alignment = blocks.ChoiceBlock(choices=(
-        ('tl', 'Left'),
-        ('tr', 'Right'),
-        ('tc', 'Center'))
+    caption_alignment = blocks.ChoiceBlock(
+        choices=(("tl", "Left"), ("tr", "Right"), ("tc", "Center"))
     )
 
     class Meta:
         """Class specific attrbutes."""
 
-        icon = 'image'
-        template = 'common/_captioned_image_block.html'
+        icon = "image"
+        template = "common/_captioned_image_block.html"
 
 
 class HeaderH1(blocks.CharBlock):
@@ -47,8 +43,8 @@ class HeaderH1(blocks.CharBlock):
     class Meta:
         """Class specific attributes."""
 
-        icon = 'title'
-        template = 'common/_h1.html'
+        icon = "title"
+        template = "common/_h1.html"
 
 
 class Subhead(blocks.CharBlock):
@@ -57,8 +53,8 @@ class Subhead(blocks.CharBlock):
     class Meta:
         """Class specific attributes."""
 
-        icon = 'title'
-        template = 'common/_subhead.html'
+        icon = "title"
+        template = "common/_subhead.html"
 
 
 class CallToAction(blocks.StructBlock):
@@ -73,8 +69,8 @@ class CallToAction(blocks.StructBlock):
     class Meta:
         """Class specific attributes."""
 
-        icon = 'title'
-        template = 'common/_cta.html'
+        icon = "title"
+        template = "common/_cta.html"
 
 
 class BannerImage(blocks.StructBlock):
@@ -93,8 +89,8 @@ class BannerImage(blocks.StructBlock):
     class Meta:
         """Class specific attributes."""
 
-        icon = 'image'
-        template = 'common/_banner_image_link.html'
+        icon = "image"
+        template = "common/_banner_image_link.html"
 
 
 class CTAButton(blocks.StructBlock):
@@ -103,17 +99,15 @@ class CTAButton(blocks.StructBlock):
     button_copy = blocks.CharBlock(max_length=32)
     button_link = blocks.PageChooserBlock(required=False)
     button_external_link = blocks.URLBlock(required=False)
-    alignment = blocks.ChoiceBlock(choices=(
-        ('tl', 'Left'),
-        ('tr', 'Right'),
-        ('tc', 'Center'))
+    alignment = blocks.ChoiceBlock(
+        choices=(("tl", "Left"), ("tr", "Right"), ("tc", "Center"))
     )
 
     class Meta:
         """Specific attributes."""
 
-        icon = 'title'
-        template = 'common/_cta_button.html'
+        icon = "title"
+        template = "common/_cta_button.html"
 
 
 class EmbedCode(blocks.StructBlock):
@@ -124,5 +118,5 @@ class EmbedCode(blocks.StructBlock):
     class Meta:
         """Specific attrs."""
 
-        icon = 'code'
-        template = 'common/_embed_code.html'
+        icon = "code"
+        template = "common/_embed_code.html"

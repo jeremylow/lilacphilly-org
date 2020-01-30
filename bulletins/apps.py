@@ -5,4 +5,4 @@ from django.apps import AppConfig
 class BulletinsConfig(AppConfig):
     """App specific configs."""
 
-    name = 'bulletins'
+    name = "bulletins"

@@ -7,7 +7,9 @@ import datetime
 import calendar
 
 
-def make_calendar(year=datetime.datetime.now().year, month=datetime.datetime.now().month):
+def make_calendar(
+    year=datetime.datetime.now().year, month=datetime.datetime.now().month
+):
     """Return curr year & month & list of lists representing days in curr month."""
     calendar.setfirstweekday(calendar.SUNDAY)
     year, month = int(year), int(month)
