@@ -1,5 +1,5 @@
 - repo: git://github.com/pre-commit/pre-commit-hooks
-  sha: v0.7.1
+  rev: v0.7.1
   hooks:
   - id: trailing-whitespace
   - id: debug-statements
@@ -7,14 +7,14 @@
     exclude: "migrations/*"
 
 - repo: git://github.com/chewse/pre-commit-mirrors-pydocstyle
-  sha: v0.0.2
+  rev: v0.0.2
   hooks:
   - id: pydocstyle
     exclude: "migrations/*"
     args: ['--ignore=D100,D105,D203']
 
 - repo: git://github.com/pricematch/pricematch-pre-commit-hooks
-  sha: 82b0c142b363547cc873bc6581fa3074087a37d2
+  rev: 82b0c142b363547cc873bc6581fa3074087a37d2
   hooks:
   - id: do_not_commit
 
