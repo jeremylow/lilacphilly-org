@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 
-from .base import *  # noqa
+from config.settings.base import *  # noqa
 
 INTERNAL_IPS = ("localhost", "0.0.0.0", "127.0.0.1")
 
 DEBUG = True
-INSTALLED_APPS += ["template_debug"]  # noqa
 
 [t.get("OPTIONS").update({"debug": True}) for t in TEMPLATES]  # noqa
 
