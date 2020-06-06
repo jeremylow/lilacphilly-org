@@ -1,41 +1,32 @@
 {% extends "base.html" %}
 
 {% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
 {% load common_tags %}
 
 {% block body_class %}template-outreachbloghomepage{% endblock %}
 
 {% block content %}
-    <h1 class="f2">News</h1>
-    <div class="pagination">
-        {% if resources.has_previous %}
-            <a href="?page={{ resources.previous_page_number }}" class="f5 no-underline black bg-animate hover-bg-black hover-white pa2 ba border-box mr1"><svg class="w1" data-icon="chevronLeft" viewBox="0 0 32 32" style="fill:currentcolor"><title>chevronLeft icon</title><path d="M20 1 L24 5 L14 16 L24 27 L20 31 L6 16 z"></path></svg><span class="pl1">Newer</span></a>
-        {% endif %}
-        {% for page_num in resources.paginator.page_range %}
-            <small class="btn primary">
-            Page:
-                {% if page_num == resources.number %}
-                    <span class="btn primary">{{ page_num }}</span>
-                {% else %}
-                <a href="?page={{ page_num }}" class="pill btn secondary link">{{ page_num }}</a>{% endif %}
-            </small>
-        {% endfor %}
-        {% if resources.has_next %}
-            <a href="?page={{ resources.next_page_number }}" class="f5 no-underline black bg-animate hover-bg-black hover-white pa2 ba border-box mr4"><svg class="w1" data-icon="chevronRight" viewBox="0 0 32 32" style="fill:currentcolor"> <title>chevronRight icon</title> <path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z"></path></svg><span class="pl1">Older</span></a>
-        {% endif %}
-    </div>
+    <h1>News</h1>
+
+    {% include "blog/_pagination.html"%}
+
     <div>
         {% for blog in resources %}
-        <article>
+        <article class="mb4">
             <div>
                 <a href="{{ blog.url }}" class="link">
-                    <h2>{{ blog.title }}</h3>
+                    <h2 class="mb0">{{ blog.title }}</h3>
                 </a>
             </div>
-            <small class="">--{{ blog.specific.blog_author }}, {{ blog.specific.blog_date }}</small>
-            <p class="f6 lh-copy measure mt2">{{ blog.specific.body | truncatewords_html:100 }}</p>
-            <a href="{{ blog.url }}" class="btn primary">Read more</a>
+            <small>By {{ blog.specific.blog_author }}, {{ blog.specific.blog_date }}</small>
+
+            <p>{{ blog.specific.body  | truncatewords_html:50 }}</p>
+            <a href="{{ blog.url }}" class="btn bg-info white m0">Read more</a>
         </article>
         {% endfor %}
+    </div>
+    <div class="mt4">
+    {% include "blog/_pagination.html"%}
     </div>
 {% endblock %}
