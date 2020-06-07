@@ -104,4 +104,3 @@ node_modules
 *.retry
 
 static/
-.vscode/

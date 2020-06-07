@@ -1,19 +1,19 @@
 #!/bin/bash
 
-NAME="{{ domain }}"
-SERVERDIR={{ http_root }}/{{ domain }}/
-VENVDIR={{ http_root }}/venvs/{{ domain }}
-USER="{{ http_user}}"
-GROUP="{{ http_user }}"
-PORT={{ django_port }}
+NAME="lilacphilly.org"
+SERVERDIR=/opt/lilacphilly_org
+VENVDIR=/opt/lilacphilly_org/venv
+USER=www-data
+GROUP=www-data
+PORT=8001
 NUM_WORKERS=2
 
 cd $SERVERDIR
 source $VENVDIR/bin/activate
 
-DJANGO_WSGI_MODULE={{ django_wsgi_module }}
+DJANGO_WSGI_MODULE=config.wsgi
 export PYTHONPATH=$SERVERDIR:$PYTHONPATH
-export DJANGO_SETTINGS_MODULE={{ django_settings_module }}
+export DJANGO_SETTINGS_MODULE=config.settings.production
 
 
 exec $VENVDIR/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
@@ -22,3 +22,4 @@ exec $VENVDIR/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
     --user=$USER --group=$GROUP \
     --log-level=info \
     --bind=127.0.0.1:$PORT
+
