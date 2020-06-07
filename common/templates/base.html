@@ -9,6 +9,9 @@
 <!DOCTYPE html>
 <html class="no-js fw4" lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="google-site-verification" content="{{ settings.common.seosettings.google_site_verification_key }}">
@@ -53,7 +56,7 @@
 
 
     <!--FAVICON-->
-    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'favicon/apple-touch-icon-57x57.png' %}">
+    {% comment %} <link rel="apple-touch-icon" sizes="57x57" href="{% static 'favicon/apple-touch-icon-57x57.png' %}">
     <link rel="apple-touch-icon" sizes="114x114" href="{% static 'favicon/apple-touch-icon-114x114.png' %}">
     <link rel="apple-touch-icon" sizes="72x72" href="{% static 'favicon/apple-touch-icon-72x72.png' %}">
     <link rel="apple-touch-icon" sizes="144x144" href="{% static 'favicon/apple-touch-icon-144x144.png' %}">
@@ -72,69 +75,12 @@
     <meta name="msapplication-square70x70logo" content="{% static 'favicon/mstile-70x70.png' %}">
     <meta name="msapplication-square150x150logo" content="{% static 'favicon/mstile-150x150.png' %}">
     <meta name="msapplication-wide310x150logo" content="{% static 'favicon/mstile-310x150.png' %}">
-    <meta name="msapplication-square310x310logo" content="{% static 'favicon/mstile-310x310.png' %}">
-    <link href="//fonts.googleapis.com/css?family=Fira Code&subset=latin" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/mono.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/light.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/color.min.css' %}">
-    <style>
-        body {
-            font-family: Fira Code;
-        }
-        .link {
-            text-decoration: none;
-        }
-        main {
-            min-height: 100vh;
-        }
-        .megamega {
-            font-size: 4rem;
-        }
-        @media(min-width:650px) {
-            .megamega {
-                font-size: 7rem;
-                margin-top: 3rem;
-            }
-        }
+    <meta name="msapplication-square310x310logo" content="{% static 'favicon/mstile-310x310.png' %}"> {% endcomment %}
 
-        {% comment %} a {
-            color: var(--info);
-        } {% endcomment %}
-        .mb0 {
-            margin-bottom: 0;
-        }
-        .mb4 {
-            margin-bottom: 4rem;
-        }
-        .mt4 {
-            margin-top: 4rem;
-        }
+    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/color.min.css' %}"> {% endcomment %}
 
-        .container {
-            width: 90%;
-        }
-        .vm {
-            vertical-align: middle;
-        }
-        .cursor {
-            cursor: default!important;
-        }
-        a[href="https://actionnetwork.org/fundraising/sign-up-for-monthly-dues"],
-        a[href="https://actionnetwork.org/forms/dues-waiver"] {
-            border: 0;
-            white-space: nowrap;
-            font-style: normal;
-            font-family: Fira Code;
-            display: inline-block;
-            padding: 1rem;
-            margin: .5rem auto;
-            max-width: 100%;
-            color: #fff;
-            background-color: var(--info);
-            text-decoration: none;
-            width: 100%
-        }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira Code&subset=latin&display=swap" media="print" onload="this.media='all'">
+    <style>{% include "common/css.html" %}</style>
 </head>
 <body class="{% block body_class %}{% endblock %}">
     {% block headerline %}

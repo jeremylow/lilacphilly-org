@@ -11,15 +11,15 @@
 {% endblock %}
 
 {% block content %}
-  <div class="measure-wide center">
-    <h1 class="mt5 mb4 fw3 f-title meaure center">{{ page.title|safe }}</h1>
+  <div>
+    <h1>{{ page.title|safe }}</h1>
     {{ page.intro|safe }}
   </div>
 
   {% for event in events %}
   <a href="{% pageurl event %}" class="link">
     <div class="card col bg-info white">
-      <h5 class="white">{{ event }}</h5>
+      <h5 class="white mv">{{ event }}</h5>
       <small class="white">{{ event.specific.event_date }} @ {{event.specific.event_start_time }}</small>
     </div>
   </a>
