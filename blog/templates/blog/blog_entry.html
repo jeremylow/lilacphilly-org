@@ -11,8 +11,8 @@
 
 {% block content %}
 <div>
-  <h1>{{ page.title }}</h1>
-  <span class="">By {{ page.blog_author }}, {{ page.blog_date }}</span>
+  <h1 class="mb0">{{ page.title }}</h1>
+  <small class="dib mb4">By {{ page.blog_author }}, {{ page.blog_date }}</small>
 
   <article>
     {% include_block page.body %}
