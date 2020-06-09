@@ -4,7 +4,9 @@
 <article class="center measure-wide">
   <h1><a href="{% pageurl event %}" class="link" title="Permalink for {{event.title}}">{{ event.title }}</a></h1>
   <div class="mv">
+    {% if not event.no_physical_location %}
     <a class="pill btn primary m0 mv dib" href="http://maps.google.com/?q={{ event.location_street_address}},{{event.location_city}},{{event.location_state}},{{event.location_zip_code}}" target="_blank">Google Maps</a>
+    {% endif %}
     <a class="pill btn bg-info white m0 mv dib "  href="{{ event.url }}?format=ical">iCal / Outlook</a>
     <a class="pill btn bg-success white primary m0 mv dib" target="_blank" href="http://www.google.com/calendar/event?action=TEMPLATE&text={{ event.title|urlencode }}&dates={{ event.event_start_dt|zulu_time}}/{{ event.event_end_dt|zulu_time }}&sprop=website:{{ event.full_url }}&sprop;=name:LilacPhilly&location={{ event.location_name }},{{ event.location_street_address }},{{ event.location_city }},{{ event.location_state }},{{ event.location_zip_code }}" class="pa2 ph3 mv2 bg-black dib white">Google Calendar</a>
   </div>
@@ -14,6 +16,7 @@
     </div>
 
     <div>
+    {% if not event.no_physical_location %}
       {% if event.location_name %}
         Location name: {{ event.location_name }}
       {% endif %}
@@ -24,6 +27,7 @@
       </div>
 
       <div><strong class="info">{% if not event.wheelchair_accessible %}Not {% endif %}Wheelchair Accessible</strong></div>
+    {% endif %}
       <div><strong class="info">{% if not event.asl_available %}No {% endif %}ASL Interpretation</strong></div>
     </div>
   </div>
