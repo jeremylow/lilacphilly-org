@@ -16,12 +16,12 @@
     {{ page.intro|safe }}
   </div>
 
+<div class="cal-grid">
   {% for event in events %}
-  <a href="{% pageurl event %}" class="link">
-    <div class="card col bg-info white">
+    <a href="{% pageurl event %}" class="dib card bg-info white link jss">
       <h5 class="white mv">{{ event }}</h5>
       <small class="white">{{ event.specific.event_date }} @ {{event.specific.event_start_time }}</small>
-    </div>
-  </a>
+    </a>
   {% endfor %}
+</div>
 {% endblock %}
