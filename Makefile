@@ -47,3 +47,4 @@ deploy:
 	git pull;
 	chown -R www-data .;
 	chgrp -R www-data .;
+	supervisorctl restart lilacphilly;
