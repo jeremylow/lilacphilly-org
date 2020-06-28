@@ -150,6 +150,7 @@
         {# Override this in templates to add extra javascript #}
     {% endblock %}
 
+    {% if user.is_anonymous %}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ settings.common.seosettings.google_analytics_key }}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -158,6 +159,7 @@
 
       gtag('config', '{{ settings.common.seosettings.google_analytics_key }}');
     </script>
+    {% endif %}
 
 </body>
 </html>

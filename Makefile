@@ -34,12 +34,6 @@ gulp:
 ci: clean env info test
 	codecov
 
-ans_deploy:
-	ansible-playbook --private-key=.vagrant/machines/default/virtualbox/private_key -u vagrant -i ansible/hosts ansible/ansible-lilacphilly-org.yml -vvvv --vault-password-file ~/.vault_pass.txt
-
-deploy:
-	ansible-playbook --private-key=~/.ssh/id_rsa -u jeremy -i ansible/hosts ansible/lilacphilly-org.yml -vv --vault-password-file ~/.vault_pass.txt -K
-
 dump:
 	python manage.py dumpdata --natural-foreign --natural-primary > data-`date +'%Y-%m-%d-%H-%M-%S'`.json
 
@@ -48,3 +42,8 @@ uncss:
 
 black:
 	black .
+
+deploy:
+	git pull;
+	chown -R www-data .;
+	chgrp -R www-data .;

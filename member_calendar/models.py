@@ -77,7 +77,7 @@ class MemberCalendarHomePage(RoutablePageMixin, Page):
             ).order_by("membercalendarevent__event_date")
         else:
             events = events_qs.filter(
-                membercalendarevent__event_date__month=datetime.datetime.now().month
+                membercalendarevent__event_date__gte=datetime.datetime.now()
             ).order_by("membercalendarevent__event_date")
 
         year, month, cal = make_calendar(
