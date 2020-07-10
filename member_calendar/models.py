@@ -11,6 +11,10 @@ from django.utils.text import slugify
 from icalendar import Event, Calendar
 from dateutil import relativedelta
 
+from modelcluster.contrib.taggit import ClusterTaggableManager
+from modelcluster.fields import ParentalKey
+from taggit.models import TaggedItemBase
+
 from wagtail.contrib.routable_page.models import RoutablePageMixin, route
 from wagtail.core import blocks
 from wagtail.core.models import Page
@@ -110,9 +114,16 @@ class MemberCalendarHomePage(RoutablePageMixin, Page):
         return context
 
 
+class CalendarEventTag(TaggedItemBase):
+    """Tag for BlogEntry."""
+
+    content_object = ParentalKey("MemberCalendarEvent", related_name="tagged_items")
+
+
 class MemberCalendarEvent(Page):
     """Page for a single event."""
 
+    event_tags = ClusterTaggableManager(through=CalendarEventTag, blank=True)
     event_date = models.DateField("Event Date")
     event_start_time = models.TimeField("Start time")
     event_end_time = models.TimeField("End time")
@@ -143,6 +154,7 @@ class MemberCalendarEvent(Page):
     search_fields = Page.search_fields + [index.SearchField("body")]
 
     content_panels = Page.content_panels + [
+        FieldPanel("event_tags"),
         FieldPanel("event_date"),
         FieldPanel("event_start_time"),
         FieldPanel("event_end_time"),

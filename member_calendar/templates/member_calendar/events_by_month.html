@@ -18,9 +18,13 @@
 
 <div class="cal-grid">
   {% for event in events %}
-    <a href="{% pageurl event %}" class="dib card bg-info white link jss">
-      <h5 class="white mv">{{ event }}</h5>
-      <small class="white">{{ event.specific.event_date }} @ {{event.specific.event_start_time }}</small>
+
+
+  <a href="{% pageurl event %}" class="dib card  link jss {% for tag in event.specific.event_tags.all %}cal-{{ tag }} {% endfor %}">
+      <h5 class="mv">{{ event }}</h5>
+      <small>{{ event.specific.event_date }} @ {{ event.specific.event_start_time }}</small><br>
+      <span class="cal-pill">{% for tag in event.specific.event_tags.all %}{{ tag }} {% endfor %}</span>
+
     </a>
   {% endfor %}
 </div>
