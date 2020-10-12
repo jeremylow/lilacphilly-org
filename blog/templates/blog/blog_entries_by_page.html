@@ -19,7 +19,7 @@
                     <h2 class="mb0">{{ blog.title }}</h3>
                 </a>
             </div>
-            <small>By {{ blog.specific.blog_author }}, {{ blog.specific.blog_date }}</small>
+            <small class="ttc">By {{ blog.specific.blog_author }}, {{ blog.specific.blog_date }}</small>
 
             <p>{{ blog.specific.body  | truncatewords_html:50 }}</p>
             <a href="{{ blog.url }}" class="btn bg-info white m0">Read more</a>

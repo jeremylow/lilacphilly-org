@@ -33,6 +33,7 @@ class MemberCalendarHomePage(RoutablePageMixin, Page):
     intro = RichTextField(blank=True)
 
     content_panels = Page.content_panels + [FieldPanel("intro", classname="full")]
+    subpage_types = ["member_calendar.MemberCalendarEvent"]
 
     @route(r"^$")
     @route(r"^(?P<year>[0-9]{4})/$")
