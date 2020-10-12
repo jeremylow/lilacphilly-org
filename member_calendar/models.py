@@ -153,6 +153,7 @@ class MemberCalendarEvent(Page):
     location_name = models.CharField(max_length=500, blank=True)
 
     search_fields = Page.search_fields + [index.SearchField("body")]
+    parent_page_types = ["member_calendar.MemberCalendarHomePage"]
 
     content_panels = Page.content_panels + [
         FieldPanel("event_tags"),
